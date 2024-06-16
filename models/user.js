@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://127.0.0.1:27017/shopping");
-
 const userSchema = mongoose.Schema({
     fullname: {
         type: String,
@@ -14,7 +12,6 @@ const userSchema = mongoose.Schema({
         type: Array,
         default: []
     },
-    isadmin: Boolean,
     orders: {
         type: Array,
         default: []
@@ -23,4 +20,4 @@ const userSchema = mongoose.Schema({
     picture: String
 });
 
-module.exporst = mongoose.model("user", userSchema);
+module.exports = mongoose.model("user", userSchema);

@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://127.0.0.1:27017/shopping");
-
 const ownerSchema = mongoose.Schema({
     fullname: {
         type: String,
@@ -10,11 +8,6 @@ const ownerSchema = mongoose.Schema({
     },
     email: String,
     password: String,
-    cart: {
-        type: Array,
-        default: []
-    },
-    isadmin: Boolean,
     products: {
         type: Array,
         default: []
@@ -23,4 +16,4 @@ const ownerSchema = mongoose.Schema({
     gstin: String
 });
 
-module.exporst = mongoose.model("owner", ownerSchema);
+module.exports = mongoose.model("owners", ownerSchema);
